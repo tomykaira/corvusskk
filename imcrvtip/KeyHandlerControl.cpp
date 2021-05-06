@@ -42,7 +42,9 @@ HRESULT CTextService::_HandleControl(TfEditCookie ec, ITfContext *pContext, BYTE
 				if (cx_entogglekana || (inputmode == im_hiragana))
 				{
 					//ひらがな/カタカナモードへ
-					inputmode = ((inputmode == im_hiragana) ? im_katakana : im_hiragana);
+					// inputmode = ((inputmode == im_hiragana) ? im_katakana : im_hiragana);
+					// CUSTOMIZE: Do not use Katakana mode
+					return E_PENDING;
 				}
 				_UpdateLanguageBar();
 			}
